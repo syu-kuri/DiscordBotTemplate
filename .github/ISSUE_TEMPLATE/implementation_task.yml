@@ -1,0 +1,27 @@
+name: Implementation task
+description: A piece of implementation work to be picked up (typically by Codex), scoped to a section of DESIGN.md.
+title: "[Impl] "
+labels: ["implementation"]
+body:
+  - type: input
+    id: design-section
+    attributes:
+      label: DESIGN.md section
+      description: Which section of DESIGN.md does this implement? (e.g. "5. Cog Specification — moderation.py")
+      placeholder: "e.g. 5. Cog Specification — moderation.py"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What should be implemented? Link the relevant TODO comment(s) / file(s).
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How do we know this task is done? (e.g. passes tests/test_i18n.py, ruff clean)
+    validations:
+      required: false
