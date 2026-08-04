@@ -13,7 +13,7 @@
 5. If your cog needs configuration values, add defaults to `config/config.example.yaml` and wire them into the settings object in `bot/core/config.py`.
 6. Any user-facing strings should be added as keys in `bot/locales/en.yml` (and `ja.yml`) and fetched via `bot.core.i18n.t()` rather than hardcoded — see [../DESIGN.md](../DESIGN.md) section 3.3.
 
-For the full design rationale, see [../DESIGN.md](../DESIGN.md).
+For the full design rationale, see [../DESIGN.md](../DESIGN.md). For branching, commit, review, and versioning conventions, see [WORKFLOW.md](./WORKFLOW.md).
 
 # Issue Policy
 
