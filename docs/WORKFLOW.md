@@ -7,7 +7,7 @@ Design happens in [DESIGN.md](../DESIGN.md). This document covers how work actua
 - **Design** (architecture, scope, config schema): Claude, recorded in `DESIGN.md`.
 - **Implementation**: Codex, working from `implementation`-labeled issues that each cite a `DESIGN.md` section.
 - **Review**: Claude runs `/code-review` on every PR before merge (correctness, duplication, drift from `DESIGN.md`).
-- **Merge decision**: repo owner.
+- **Merge decision**: automatic once CI passes and `/code-review` reports zero outstanding findings on a Codex-authored PR — Claude merges it. If review surfaces findings, Claude gets them fixed (by Codex) and re-reviews before merging; it does not merge over an open finding. PRs Claude itself authored (e.g. tooling/doc changes) still go to the repo owner for merge, since Claude reviewing its own work isn't a real check.
 
 ## Branching
 
@@ -23,7 +23,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/): `feat:`, `fix:
 
 1. Open a PR from the issue branch into `main`, with `Closes #<issue-number>` in the description.
 2. CI (`.github/workflows/ci.yml`: `ruff check .` + `pytest`) must pass — enforced by branch protection.
-3. Claude reviews with `/code-review` and reports findings; address them or explicitly note why not.
+3. Claude reviews with `/code-review`. If there are findings, Claude has them fixed and re-reviews; once CI is green and no findings remain, Claude squash-merges immediately without waiting for a manual go-ahead.
 4. Squash-merge into `main` (one commit per issue, using the PR title as the commit message — keep it in Conventional Commits form).
 5. Delete the branch.
 
