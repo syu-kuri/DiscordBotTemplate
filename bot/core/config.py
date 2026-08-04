@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, fields
+from dataclasses import dataclass, field, fields
 from pathlib import Path
 from typing import Any
 
@@ -40,7 +40,7 @@ class ModerationSettings:
 
 @dataclass(frozen=True)
 class Settings:
-    discord_token: str
+    discord_token: str = field(repr=False)
     command_prefix: str
     owner_ids: tuple[int, ...]
     log_level: str

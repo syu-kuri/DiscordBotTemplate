@@ -52,6 +52,7 @@ moderation:
 def test_default_config_path_is_anchored_to_project_root(
     monkeypatch, tmp_path: Path
 ) -> None:
+    monkeypatch.setattr(config, "load_dotenv", lambda *args, **kwargs: None)
     monkeypatch.delenv("CONFIG_PATH", raising=False)
     monkeypatch.chdir(tmp_path)
 
