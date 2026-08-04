@@ -1,6 +1,25 @@
 from pathlib import Path
 
+from dotenv import dotenv_values
+
 from bot.core import config
+
+
+def test_load_settings_from_example_files(monkeypatch) -> None:
+    project_root = Path(__file__).resolve().parents[1]
+    env_values = dotenv_values(project_root / ".env.example")
+    for key, value in env_values.items():
+        if value is not None:
+            monkeypatch.setenv(key, value)
+    monkeypatch.setenv(
+        "CONFIG_PATH", str(project_root / "config" / "config.example.yaml")
+    )
+
+    loaded = config.load_settings()
+
+    assert loaded.command_prefix == "!"
+    assert loaded.locale.default == "en"
+    assert loaded.features.moderation is True
 
 
 def test_load_settings_ignores_unknown_nested_keys(
