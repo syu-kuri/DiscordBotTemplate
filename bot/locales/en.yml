@@ -1,0 +1,50 @@
+# Default locale. This file is the fallback source of truth —
+# every key used by t() must exist here, even if other locales are incomplete.
+
+general:
+  ping:
+    description: "Check the bot's latency."
+    response: "Pong! Latency: {latency}ms"
+  botinfo:
+    description: "Show information about the bot."
+    title: "Bot Info"
+    field_uptime: "Uptime"
+    field_latency: "Latency"
+    field_version: "Version"
+  help:
+    description: "Show available commands."
+
+moderation:
+  kick:
+    description: "Kick a member from the server."
+    success: "{member} has been kicked. Reason: {reason}"
+  ban:
+    description: "Ban a member from the server."
+    success: "{member} has been banned. Reason: {reason}"
+  timeout:
+    description: "Timeout a member for a given duration."
+    success: "{member} has been timed out for {minutes} minute(s)."
+  clear:
+    description: "Bulk delete messages in this channel."
+    success: "Deleted {count} message(s)."
+
+admin:
+  reload:
+    description: "Reload a cog."
+    success: "Reloaded cog: {cog}"
+  sync:
+    description: "Sync slash commands."
+    success: "Synced {count} command(s)."
+  shutdown:
+    description: "Shut down the bot."
+    confirm: "Shutting down..."
+
+errors:
+  no_permission: "You don't have permission to use this command."
+  owner_only: "This command can only be used by the bot owner."
+  cooldown: "This command is on cooldown. Try again in {retry_after}s."
+  unexpected: "An unexpected error occurred. Please try again later."
+
+common:
+  yes: "Yes"
+  no: "No"

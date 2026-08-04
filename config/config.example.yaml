@@ -1,0 +1,15 @@
+locale:
+  default: en   # matches a filename (without extension) under bot/locales/. Bundled: en, ja
+
+features:
+  moderation: true
+  welcome: true
+
+welcome:
+  channel_name: "welcome"   # matched by channel name (a channel ID also works)
+  join_message: "Welcome {member_mention} to {guild_name}!"
+  leave_message: "{member_name} has left the server."
+
+moderation:
+  mute_role_name: "Muted"
+  default_timeout_minutes: 10

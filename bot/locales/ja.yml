@@ -1,0 +1,49 @@
+# Key structure must exactly match en.yml (extra/missing keys are caught by tests/test_i18n.py).
+
+general:
+  ping:
+    description: "Botの応答速度を確認します。"
+    response: "Pong! レイテンシ: {latency}ms"
+  botinfo:
+    description: "Botの情報を表示します。"
+    title: "Bot情報"
+    field_uptime: "稼働時間"
+    field_latency: "レイテンシ"
+    field_version: "バージョン"
+  help:
+    description: "利用可能なコマンド一覧を表示します。"
+
+moderation:
+  kick:
+    description: "メンバーをサーバーからキックします。"
+    success: "{member} をキックしました。理由: {reason}"
+  ban:
+    description: "メンバーをサーバーからBANします。"
+    success: "{member} をBANしました。理由: {reason}"
+  timeout:
+    description: "指定した時間、メンバーをタイムアウトします。"
+    success: "{member} を{minutes}分間タイムアウトしました。"
+  clear:
+    description: "このチャンネルのメッセージを一括削除します。"
+    success: "{count}件のメッセージを削除しました。"
+
+admin:
+  reload:
+    description: "Cogを再読み込みします。"
+    success: "Cogを再読み込みしました: {cog}"
+  sync:
+    description: "スラッシュコマンドを同期します。"
+    success: "{count}件のコマンドを同期しました。"
+  shutdown:
+    description: "Botを終了します。"
+    confirm: "終了します..."
+
+errors:
+  no_permission: "このコマンドを実行する権限がありません。"
+  owner_only: "このコマンドはBotオーナーのみ実行できます。"
+  cooldown: "クールダウン中です。{retry_after}秒後に再試行してください。"
+  unexpected: "予期しないエラーが発生しました。しばらくしてからもう一度お試しください。"
+
+common:
+  yes: "はい"
+  no: "いいえ"
