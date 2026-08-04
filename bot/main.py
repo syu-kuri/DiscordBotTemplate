@@ -1,4 +1,16 @@
-# TODO(Codex): Implement per DESIGN.md section 4 ("Bot Core").
-# - Load settings via bot.core.config
-# - Initialize logging via bot.core.logging
-# - Create bot.core.bot.TemplateBot and run it with DISCORD_TOKEN
+"""Application entry point for the Discord bot."""
+
+from bot.core.bot import TemplateBot
+from bot.core.config import settings
+from bot.core.logging import setup_logging
+
+
+def main() -> None:
+    """Configure and run the bot."""
+    setup_logging(settings.log_level)
+    bot = TemplateBot()
+    bot.run(settings.discord_token)
+
+
+if __name__ == "__main__":
+    main()
