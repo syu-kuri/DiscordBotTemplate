@@ -2,7 +2,7 @@
 
 A Discord bot template that covers the essentials of running a server bot — a Slash Command foundation, moderation, join/leave notifications, and logging — and is easy to extend.
 
-See [DESIGN.md](./DESIGN.md) for the full design.
+See [DESIGN.md](./DESIGN.md) for the full design, and [docs/ROADMAP.md](./docs/ROADMAP.md) for planned features toward v1.0.0.
 
 ## Features
 
