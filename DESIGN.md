@@ -154,9 +154,12 @@ Every command's `description` (the Slash Command help text), response messages, 
 
 ## 10. Out of Scope (not included in this template)
 
-- Database integration (persistence via SQLite/PostgreSQL, etc.)
 - Music playback
 - A dashboard/web UI
+- Economy / leveling systems
+- Anti-raid protection, verification gates, ticket systems, and community extras (polls, reminders, announcement builders) — see `docs/ROADMAP.md` for the rationale
 - A runtime command to dynamically switch language per server (guild). The i18n foundation itself is in scope per section 3.3 — switching is expected to happen by changing `config.yaml`'s `locale.default` and restarting; a runtime command for this is not supported.
 
 These are beyond the "standard feature set" tier, so users who want them are expected to add their own cog (see `docs/CONTRIBUTING.md` for how to add a cog).
+
+> **Note:** As of the v0.2.0 roadmap, lightweight database persistence (SQLite via `aiosqlite`) is now *in* scope — it backs per-guild settings and the warning system. It was originally listed here as out of scope for the v0.1.0 MVP; that decision was revisited. External database servers (e.g. standalone PostgreSQL) remain out of scope to preserve the "clone and run" goal. See `docs/ROADMAP.md`.
